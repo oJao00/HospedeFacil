@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Hotel - Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h2{
+            color: #640e08;
+        }
+        header {
+            background: #ff6600;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #640e08;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .btn-checkout {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-checkout:hover {
+            background-color:#640e08;
+        }
+        @media (max-width: 600px) {
+            table, th, td {
+                font-size: 14px;
+            }
+            nav a {
+                margin: 0 5px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sistema Hotel</h1>
+    <nav>
+        <a href="index.html">Principal</a>
+        <a href="cliente.html">Cadastro de Clientes</a>
+
+    </nav>
+</header>
+
+<main>
+    <h2 style="text-align:center;">Clientes Hospedados</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Gasto Estimado</th>
+                <th>Quarto</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pablo Patricio Borges</td>
+                <td>pablo.patricio@gmail.com</td>
+                <td>R$ 200,00</td>
+                <td>101</td>
+                <td><a href="checkout.html?nome=Pablo Patricio Borges&gasto=200" class="btn-checkout">Check-Out</a></td>
+            </tr>
+            <tr>
+                <td>Joao Pedro</td>
+                <td>joao.pedro@hotmail.com</td>
+                <td>R$ 150,00</td>
+                <td>102</td>
+                <td><a href="checkout.html?nome=Joao Pedro&gasto=150" class="btn-checkout">Check-Out</a></td>
+            </tr>
+            <tr>
+                <td>Julio Cesar</td>
+                <td>julio.cesar@gmail.com</td>
+                <td>R$ 300,00</td>
+                <td>103</td>
+                <td><a href="checkout.html?nome=Julio Cesar&gasto=300" class="btn-checkout">Check-Out</a></td>
+            </tr>
+            <tr>
+                <td>Rhafael Correia</td>
+                <td>rhafael@gmail.com</td>
+                <td>R$ 250,00</td>
+                <td>104</td>
+                <td><a href="checkout.html?nome=Rhafael Correia&gasto=250" class="btn-checkout">Check-Out</a></td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+</body>
+</html>

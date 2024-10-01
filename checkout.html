@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Hotel - Check-Out</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #ff6600;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #640e08;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        @media (max-width: 600px) {
+            label, input, select, button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sistema Hotel</h1>
+    <nav>
+        <a href="index.html">Principal</a>
+        <a href="cliente.html">Cadastro de Clientes</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Check-Out</h2>
+    <form id="checkoutForm">
+        <label>Nome do Cliente:</label>
+        <input type="text" id="clienteNome" readonly>
+
+        <label>Valor Gasto:</label>
+        <input type="text" id="valorGasto" readonly>
+
+        <label>Forma de Pagamento:</label>
+        <select id="formaPagamento">
+            <option value="dinheiro">Dinheiro</option>
+            <option value="cartao_credito">Cartão de Crédito</option>
+            <option value="cartao_debito">Cartão de Débito</option>
+            <option value="pix">Pix</option>
+        </select>
+
+        <button type="button" onclick="finalizarReserva()">Finalizar Reserva</button>
+    </form>
+
+    <h3>Itens Consumidos</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantidade</th>
+                <th>Preço Unitário</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Refeição</td>
+                <td>2</td>
+                <td>R$ 30,00</td>
+                <td>R$ 60,00</td>
+            </tr>
+            <tr>
+                <td>Serviço de Quarto</td>
+                <td>1</td>
+                <td>R$ 15,00</td>
+                <td>R$ 15,00</td>
+            </tr>
+            <tr>
+                <td>Lavanderia</td>
+                <td>3</td>
+                <td>R$ 5,00</td>
+                <td>R$ 15,00</td>
+            </tr>
+            <tr>
+                <td><strong>Total Geral</strong></td>
+                <td></td>
+                <td></td>
+                <td><strong>R$ 90,00</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById('clienteNome').value = urlParams.get('nome');
+    document.getElementById('valorGasto').value = `R$ ${urlParams.get('gasto')},00`;
+
+    function finalizarReserva() {
+        alert("Reserva finalizada com sucesso!");
+        window.location.href = "index.html"; // Redireciona para a página principal
+    }
+</script>
+
+</body>
+</html>
